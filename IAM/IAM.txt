@@ -1,0 +1,46 @@
+IAM - Identity and Access Management
+    -> Its a Global service
+    -> We can create users, groups, policy, roles
+    -> We have to create group and assign users into that group and leaving users without assigning to any group is not a good practice.
+    -> We can create Inline policy either through Editor or JSON
+    -> We have to always enable MFA for security reasons for both root account and all individual users.
+    -> We can assess AWS through three modes
+        -> one is through Console
+        -> second is through CLI
+        -> Third is through SDK
+    -> AWS Cloudshell - Alternative to terminal using aws commands
+        -> We can open cloudshell which will be an icon next to alaram icon in the aws taskbar.
+        -> We can use all the aws commands in Cloudshell.
+        -> We can open cloudshell which is region specific and when we open cloudshell the default region will be the one where you opened the cloudshell.
+    -> We can create roles in IAM
+        -> On behalf of us some AWS service will need to perform actions. We can use roles
+        -> For example, if Ec2 instance wants to fetch some information from AWS. So we can create role and attach necessary permissions to the Ec2, so that it can do the necessary actions.
+        -> Common roles include, EC2 instance roles, Lambda Function Roles, Roles for Cloud Formation
+    -> IAM security Tools
+        -> IAM Credentials Report (account-level) - a report that list all your account's users and the status of their various Credentials
+            -> Generate Credentials Report
+                -> Goto Access reports -> Credential report -> Download credentials report
+        
+        -> IAM Access Advisor (user-level) - Access advisor shows the service permissions granted to a user and when those services were last accessed. You can use this information to revise your polices
+            -> The Access Advisor name is changed to Last Accessed
+            -> Goto User -> Select the user -> select Last Accessed
+    -> IAM Guidelines and Best practices
+        -> Don't use the root account except for AWS account setup
+        -> One physical user = One AWS user
+        -> Assign users to groups and assign permissions to groups
+        -> Create a strong password policy
+        -> Use and enforce the use of Multi Factor Authentication (MFA)
+        -> Create and use Roles for giving permissions to AWS services
+        -> Use Access keys for Programmatic Access ( CLI / SDK )
+        -> Audit permissions of your account using IAM Credentials Report and IAM Access Advisor
+        -> Never share IAM users and Access Keys
+    -> IAM Section - Summary
+        -> Users: mapped to a physical user, has a password for AWS Console
+        -> Groups: contains users only
+        -> Policies: JSON document that outlines permissions for users or groups
+        -> Roles: for EC2 instances or AWS services
+        -> Security: MFA + Password policy
+        -> AWS CLI: manage your AWS services using the command-line
+        -> AWS SDK: manage your AWS services using a programming language
+        -> Access Keys: access AWS using the CLI or SDK
+        -> Audit: IAM Credential Reports and IAM Access Advisor(Last Accessed)
